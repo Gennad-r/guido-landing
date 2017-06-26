@@ -1,6 +1,8 @@
 @import "fonts"
 @import "libs"
 @import "vars"
+@import "animations"
+
 
 *::-webkit-input-placeholder
 	color: #666
@@ -29,7 +31,7 @@ html, body
 	height: 100%
 
 body
-	font-size: 16px
+	font-size: 22px
 	min-width: 320px
 	position: relative
 	line-height: 1.75
@@ -41,5 +43,52 @@ body
 	display: block
 	max-width: 100%
 	height: auto
+
+svg:not(:root)
+	overflow: visible
+
+h1
+	color: #fff
+	text-align: center
+	line-height: 1.4
+	font-size: 1.3em
+	font-weight: normal
+.navigation
+	position: fixed
+	width: 100%
+	top: 0
+	overflow: hidden
+	background-color: $accent
+	box-shadow: 0px 1px 25px -1px #000
+	z-index: 999
+	ul
+		list-style: none
+		float: right
+		margin: 0
+		li
+			float: left
+			a
+				transition: .4s
+				color: #fff
+				display: inline-block
+				padding: 15px 25px
+				border-bottom: 5px solid rgba(0,0,0,0)
+			&.active, &:hover
+				a
+					border-bottom: 5px solid $orange
+					text-decoration: none
+
+#sect1
+	height: 100vh
+
+.blue
+	background-color: $accent
+
+.main-pict-holder
+	position: absolute
+	top: 54vh
+	transform: translateY(-50%)
+
+
 
 @import "media" // Всегда в конце

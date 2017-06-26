@@ -1,0 +1,80 @@
+@keyframes logo-animate
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+@keyframes white-car-animate
+	0%
+		transform: translateY(100px)
+		opacity: 0
+	30%
+		transform: translateY(-20px)
+		opacity: 1
+	100%
+		transform: translateY(0)
+		opacity: 1
+@keyframes dark-car-animate
+	0%
+		transform: translateY(200px)
+		opacity: 0
+	50%
+		transform: translateY(200px)
+		opacity: 0
+	100%
+		transform: translateY(0)
+		opacity: 1
+@keyframes red-car-animate
+	0%
+		transform: translateY(-200px)
+		opacity: 0
+	30%
+		transform: translateY(-80px)
+	90%
+		transform: translateY(10px)
+	100%
+		transform: translateY(0)
+		opacity: 1
+@keyframes st1
+	0%
+		opacity: 0
+		transform: translateX(-50px)
+	100%
+		transform: translateX(0px)
+@keyframes st4
+	0%
+		opacity: 0
+		transform: translateX(50px)
+	100%
+		transform: translateX(0px)
+@keyframes st2
+	0%
+		opacity: 0
+		transform: translateX(-100px)
+	100%
+		transform: translateX(0px)
+@keyframes st3
+	0%
+		opacity: 0
+		transform: translateX(100px)
+	100%
+		transform: translateX(0px)
+#guido_logo
+	animation: logo-animate 2s ease-in-out
+#white-car
+	animation: white-car-animate 3s ease-in-out
+#dark-car
+	animation: dark-car-animate 2s ease-in-out
+#red-car
+	animation: red-car-animate 5s ease-in-out
+#strike01, #strike04
+	transition: .7s
+#strike02, #strike03
+	transition: .9s
+#strike01
+	animation: st1 1s ease-in-out
+#strike04
+	animation: st4 1s ease-in-out
+#strike02
+	animation: st2 1s ease-in-out
+#strike03
+	animation: st3 1s ease-in-out
