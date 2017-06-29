@@ -2,7 +2,9 @@
 @import "libs"
 @import "vars"
 @import "animations"
-
+@import "../../node_modules/hamburgers/dist/hamburgers"
+@import "../../node_modules/magnific-popup/dist/magnific-popup"
+@import "slider"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -46,6 +48,29 @@ body
 
 svg:not(:root)
 	overflow: visible
+.to-top.scrolled
+	bottom: 10px
+	opacity: 1
+	box-shadow: none
+	
+.to-top
+	opacity: 0
+	right: 10px
+	bottom: -50px
+	position: fixed
+	z-index: 6
+	color: #fff
+	cursor: pointer
+	padding: 5px
+	width: 70px
+	height: 40px
+	transition: .3s ease-in
+#to-top-icon
+	transition: .3s ease-in
+	fill: lighten($accent, 25%)
+	width: 100%
+	&:hover
+		fill: $orange
 
 h1
 	color: #fff
@@ -53,6 +78,20 @@ h1
 	line-height: 1.4
 	font-size: 1.3em
 	font-weight: normal
+
+.ligth h2
+	color: $accent
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+	background-color: #fff
+	height: 3px
+.hamburger
+	padding-top: 20px
+	padding-bottom: 0px
+	z-index: 6
+	position: absolute
+	display: none
+
 .navigation
 	position: fixed
 	width: 100%
@@ -60,34 +99,146 @@ h1
 	overflow: hidden
 	background-color: $accent
 	box-shadow: 0px 1px 25px -1px #000
-	z-index: 999
+	z-index: 5
 	ul
 		list-style: none
 		float: right
 		margin: 0
+		padding-left: 0
 		li
 			float: left
 			a
-				transition: .4s
+				transition: .25s ease-in
 				color: #fff
 				display: inline-block
 				padding: 15px 25px
 				border-bottom: 5px solid rgba(0,0,0,0)
-			&.active, &:hover
+				text-decoration: none
+				&.active
+					border-bottom: 5px solid $orange
+			&:hover
 				a
 					border-bottom: 5px solid $orange
-					text-decoration: none
+			
+.navigation .button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	margin: 5px
+	background-color: $orange
+	padding: 11px 23px 13px
+	text-transform: uppercase
+	text-align: center
+	position: relative
+	outline: none
+	transition: .4s ease-in
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($orange, 5%)
+	&:active
+		background-color: darken($orange, 5%)
+
+
+.navigation.scrolled
+	box-shadow: 0px 1px 10px -1px #000
+	ul
+		li
+			a
+				padding-top: 5px
+				padding-bottom: 5px
+				border-bottom: 2px solid rgba(0,0,0,0)
+				&.active
+					border-bottom: 2px solid $orange
+			&:hover
+				a
+					border-bottom: 2px solid $orange
+
+
+
+	.button
+		padding-top: 3px
+		padding-bottom: 4px
+
 
 #sect1
 	height: 100vh
 
 .blue
 	background-color: $accent
+.light
+	background-color: #fff
+
 
 .main-pict-holder
 	position: absolute
 	top: 54vh
 	transform: translateY(-50%)
+
+/* slider ------------------------------------------------- */
+.s-slide
+	position: relative
+	margin-bottom: 40px
+	img
+		max-width: 100%
+	.slide-icon
+		display: block
+		width: 30%
+		margin-right: 15px
+		margin-top: 5px
+	p
+		line-height: 1.2
+
+.slick-dots
+	list-style: none
+	text-align: center
+	position: absolute
+	width: 100%
+	padding: 0
+	bottom: 30px
+
+
+	li
+		display: inline-block
+		position: relative
+		margin: 0 3px
+		width: 14px
+		height: 14px
+		padding: 0
+		cursor: pointer
+		button
+			position: relative
+			font-size: 0
+			line-height: 0
+			display: block
+			width: 14px
+			height: 14px
+			padding: 5px
+			cursor: pointer
+			color: transparent
+			border: 0
+			outline: none
+			background-color: #fff
+			border-radius: 50%
+			
+			&::before
+				content: ''
+				background-color: $accent
+				position: absolute
+				height: 10px
+				width: 10px
+				top: 2px
+				left: 2px
+				border-radius: 50%
+		&.slick-active
+			button
+				&::before
+					background-color: $orange
+
+
+
 
 
 
