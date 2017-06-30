@@ -29,6 +29,32 @@
 </head>
 
 <body>
+	<div class="mfp-hide" id="form-wraper">
+		<form id="contact-us" role="form">
+			<legend>Contact us!</legend>
+
+			<div class="form-group">
+				<div class="field">
+					<label for="c-name">Your name:</label>
+					<input type="text" required min="2" class="form-control" id="c-name" name="c-name" placeholder="">
+				</div>
+				<div class="field">
+					<label for="c-email">E-mail:</label>
+					<input type="email" required class="form-control" id="c-email" name="c-email" placeholder="">
+				</div>
+				<div class="field">
+					<label for="c-question">Type here:</label>
+					<textarea name="c-question" id="c-question" placeholder="Type here..."></textarea>
+				</div>
+				<div class="right">
+					<button type="submit" class="btn btn-primary">Send</button>
+				</div>
+			</div>
+
+
+
+		</form>
+	</div>
 	<div class="hamburger hamburger--elastic">
 		<div class="hamburger-box">
 			<div class="hamburger-inner"></div>
@@ -43,7 +69,7 @@
 			<li><a href="#sect2">Challenges</a></li>
 			<li><a href="#sect3">How it works</a></li>
 			<li><a href="#sect4">Benefits</a></li>
-			<li><div class="button">Contact us!</div></li>
+			<li><div id="btn-contacts" class="button" data-effect="mfp-3d-unfold">Contact us!</div></li>
 		</ul>
 	</div>
 	<div class="container-fluid sect blue" id="sect1">
@@ -132,7 +158,7 @@
 					<p>Our solution <strong>saves time, saves money, increases parking revenue, decreases CO<sub>2</sub> emission</strong> and <strong>fuel consumption</strong> as well as provides comfortable conditions for driving.</p>
 				</div>
 				<div class="col-sm-12">
-					<div class="scheme-holder light">
+					<div id="cheme" class="scheme-holder light">
 						<div class="st">
 							<img src="img/sheme/scheme01.png" alt="How it works">
 						</div>
@@ -144,6 +170,14 @@
 						</div>
 					</div>
 				</div>
+					<div class="col-sm-12">
+						<p>Using the app allows the driver to:</p>
+						<ul>
+							<li><strong>get navigation</strong> to the nearest available parking space;</li>
+							<li><strong>check pricing</strong> for the parking and pay for it.</li>
+						</ul>
+						<p><strong>Guido website</strong> provides all the <strong>services</strong> for the <strong>end users</strong> as well as access to the <strong>administering module</strong> and <strong>personal cabinet</strong>.</p>
+					</div>
 			</div>
 		</div>
 	</div> <!-- end of sect 3 -->
@@ -224,8 +258,24 @@
 			</div>
 		</div>
 	</div> <!-- end of sect 4 -->
-	<link rel="stylesheet" href="css/main.min.css">
-	<script src="js/scripts.min.js"></script>
+	<div class="container-fluid sect blue" id="sect5">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h2>Contacts</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<p>With GUIDO parking operators have an opportunity to:</p>
+					
+				</div>
+				<div class="col-sm-6">
+				</div>
+			</div>
+		</div> <!-- end of sect 4 -->
+		<link rel="stylesheet" href="css/main.min.css">
+		<script src="js/scripts.min.js"></script>
 
-</body>
-</html>
+	</body>
+	</html>

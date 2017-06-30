@@ -9,7 +9,6 @@
   "author": "WebDesign Master",
   "license": "ISC",
   "devDependencies": {
-    "active-scroll": "^1.0.2",
     "browser-sync": "^2.18.11",
     "del": "^3.0.0",
     "gulp": "^3.9.1",

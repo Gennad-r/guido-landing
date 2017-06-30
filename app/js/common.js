@@ -1,39 +1,41 @@
 $(function() {
 
 	// Custom JS
+
+	//popup form
+	$("#btn-contacts").magnificPopup({
+		items: {
+			type: 'inline',
+			src: '#form-wraper'
+		},
+		closeBtnInside: true,
+	});
+
+
 	//scroll to
-
-
-
-		$('.navigation a, .to-top').bind('click', function(e) {
+	$('.navigation a, .to-top').bind('click', function(e) {
 				e.preventDefault(); // prevent hard jump, the default behavior
 
 				var target = $(this).attr("href") || $(this).attr("data"); // Set the target as variable
 
 				// perform animated scrolling by getting top-position of target-element and set it as scroll target
 				$('html, body').stop().animate({
-						scrollTop: $(target).offset().top - $('.navigation').height() + 1
+					scrollTop: $(target).offset().top - $('.navigation').height() + 1
 				}, 600, function() {
 						location.hash = target; //attach the hash (#jumptarget) to the pageurl
-				});
+					});
 
 				return false;
-		});
+			});
 
-$(window).scroll(function() {
+	$(window).scroll(function() {
 		var scrollDistance = $(window).scrollTop();
-
-		// Show/hide menu on scroll
-		//if (scrollDistance >= 850) {
-		//		$('nav').fadeIn("fast");
-		//} else {
-		//		$('nav').fadeOut("fast");
-		//}
-		
 		if ( window.scrollY >= 150 ) {
 			$('.navigation').addClass('s-scrolled');
+			$('.hamburger').addClass('h-scrolled');
 		} else {
 			$('.navigation').removeClass('s-scrolled');
+			$('.hamburger').removeClass('h-scrolled');
 		};
 		
 		if ( window.scrollY >= window.innerHeight * 0.8 ) {
@@ -42,23 +44,23 @@ $(window).scroll(function() {
 			$('.to-top').removeClass('s-scrolled');
 		};
 
-
-
 		// Assign active class to nav links while scolling
 		$('.sect').each(function(i) {
-				if ($(this).position().top - 150 <= scrollDistance) {
+			if ($(this).position().top - 150 <= scrollDistance) {
 						//console.log($(this).position().top, );
 						$('.navigation a.active').removeClass('active');
 						$('.navigation a').eq(i).addClass('active');
-				}
+					}
+				});
+
+		//fade-in scheme images
+		if ($("#cheme").position().top <= scrollDistance) {
+			$('.scheme-holder div').each(function (i) {
+				console.log($(".scheme-holder").position().top);
+				$(this).fadeIn((i+1)*300);
 		});
-}).scroll();
-
-
-	/*$('.navigation').activescroll({
-		offset: 42
-	});*/
-	// navigation menu
+		};
+	}).scroll();
 
 
 	//slider for challenges
@@ -71,4 +73,6 @@ $(window).scroll(function() {
 		mobileFirst:	true,
 		
 	});
+
+
 });

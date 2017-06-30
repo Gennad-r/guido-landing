@@ -83,25 +83,33 @@ h2
 .light
 	h2
 		color: $accent
+	strong
+		font-weight: 700
 .blue h2, .blue p
 	color: #fff
 p
 	margin-top: 0
 	color: $accent
-.blue p
+.blue
+	p, li
 	font-weight: 100
-strong
-	font-weight: normal
+	strong
+		font-weight: normal
+
 
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
 	background-color: #fff
 	height: 3px
 .hamburger
-	padding-top: 20px
+	transition: padding-top .3s
+	padding-top: 22px
 	padding-bottom: 0px
 	z-index: 6
-	position: absolute
+	position: fixed
 	display: none
+	&.h-scrolled
+		padding-top: 12px
+
 
 .navigation
 	position: fixed
@@ -131,7 +139,7 @@ strong
 				a
 					border-bottom: 5px solid $orange
 			
-.navigation .button
+.button
 	display: inline-block
 	border: none
 	color: #fff
@@ -272,7 +280,7 @@ strong
 .scheme-holder .rd
 	width: 56.677%
 
-#sect4
+#sect4, #sect3
 	ul
 		padding-left: 0
 	li
@@ -281,21 +289,76 @@ strong
 		list-style: none
 		position: relative
 		color: $accent
-		strong
-			font-weight: bold
 
-#sect4 li:before
-	content: ""
-	left: 0px
+#sect3
+	li
+		color: #fff
+		font-weight: 100
+
+#sect4, #sect3
+	li:before
+		content: ""
+		left: 0px
+		top: 4px
+		position: absolute
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 9px 0 9px 9px
+		border-color: transparent transparent transparent $orange
+
+
+
+#form-wraper
+	background-color: #fff
+	margin: auto
+	max-width: 420px
+	position: relative
+	legend
+		width: 100%
+		background-color: $accent
+		color: #fff
+		padding: 12px 20px 13px 20px
+	.form-group
+		width: 100%
+		padding: 10px 20px 15px
+		label, input, textarea
+			display: block
+			width: 100%
+			color: $accent
+			font-size: .9em
+		label
+			margin-bottom: 3px
+			margin-top: 7px
+	.field
+		margin-bottom: 5px
+	.right
+		text-align: right
+		margin-top: 15px
+		button
+			display: inline-block
+			border: none
+			color: #fff
+			text-decoration: none
+			background-color: $orange
+			padding: 11px 23px 13px
+			text-transform: uppercase
+			text-align: center
+			position: relative
+			outline: none
+			transition: .4s ease-in
+			cursor: pointer
+			&:focus, &:hover
+				text-decoration: none
+				color: #fff
+			&:hover
+				background-color: lighten($orange, 5%)
+			&:active
+				background-color: darken($orange, 5%)
+.mfp-close-btn-in .mfp-close
+	color: #fff
 	top: 4px
-	position: absolute
-	width: 0
-	height: 0
-	border-style: solid
-	border-width: 9px 0 9px 9px
-	border-color: transparent transparent transparent $orange
-
-
+	right: 4px
 
 
 
