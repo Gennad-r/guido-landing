@@ -28,7 +28,6 @@ gulp.task('common-js', function() {
 gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'node_modules/active-scroll/dist/active-scroll.min.js',
 		'node_modules/slick-carousel/slick/slick.min.js',
 		'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'app/js/common.min.js', // Всегда в конце
