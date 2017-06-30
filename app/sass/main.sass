@@ -36,7 +36,7 @@ body
 	font-size: 22px
 	min-width: 320px
 	position: relative
-	line-height: 1.75
+	line-height: 1.2
 	font-family: $default-font
 	overflow-x: hidden
 	opacity: 1
@@ -78,9 +78,18 @@ h1
 	line-height: 1.4
 	font-size: 1.3em
 	font-weight: normal
-
+h2
+	font-weight: normal
 .ligth h2
 	color: $accent
+.blue h2, .blue p
+	color: #fff
+p
+	margin-top: 0
+.blue p
+	font-weight: 100
+strong
+	font-weight: normal
 
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
 	background-color: #fff
@@ -188,8 +197,11 @@ h1
 		width: 30%
 		margin-right: 15px
 		margin-top: 5px
+		margin-bottom: 15px
 	p
 		line-height: 1.2
+	strong
+		font-weight: bold
 
 .slick-dots
 	list-style: none
@@ -236,6 +248,25 @@ h1
 			button
 				&::before
 					background-color: $orange
+
+
+.scheme-holder
+	padding: 5px
+	overflow: hidden
+.scheme-holder img
+	max-width: 100%
+
+.scheme-holder div
+	float: left
+
+.scheme-holder .st
+	width: 19.5325%
+
+.scheme-holder .nd
+	width: 23.79%
+
+.scheme-holder .rd
+	width: 56.677%
 
 
 

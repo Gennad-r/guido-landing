@@ -28,17 +28,12 @@ $(function() {
 
 	//slider for challenges
 	$('#challengesSlider').slick({
-		autoplay: 		false,
+		autoplay: 		true,
 		slidesToScroll:	1,
 		dots: 			true,
-		variableWidth:	true,
 		arrows:			false,
 		draggable:		false,
 		mobileFirst:	true,
-		responsive:		[
-						{
-							breakpoint: 1170
-						}
-						]
+		
 	});
 });
