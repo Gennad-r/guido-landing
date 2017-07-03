@@ -4,8 +4,6 @@ $(function() {
 
 	//popup form
 	var btns = $('div.button');
-	console.log(btns);
-	console.log($("#btn-contacts, #btn-sl-1"));
 	$(btns).magnificPopup({
 		items: {
 			type: 'inline',
@@ -59,10 +57,13 @@ $(function() {
 
 		//fade-in scheme images
 		if ($("#sect3").position().top - window.innerHeight * 0.8 <= scrollDistance) {
-			setTimeout(function () {$(".st").addClass("fadeIn")}, 600);
-			setTimeout(function () {$(".nd").addClass("fadeIn")}, 1200);
-			setTimeout(function () {$(".rd").addClass("fadeIn")}, 1800);
-		
+			setTimeout(function () {$(".st").addClass("fadeIn")
+				setTimeout(function () {$(".nd").addClass("fadeIn")
+					setTimeout(function () {$(".rd").addClass("fadeIn")}, 600);
+				}, 600);
+				
+			}, 600);
+
 		};
 	}).scroll();
 
@@ -77,6 +78,34 @@ $(function() {
 		mobileFirst:	true,
 		
 	});
+
+	//vivus
+
+	var city = new Vivus('city', {type: 'async', duration: 700}, function() {});
+
+	var neural = new Vivus('neural', {type: 'async', duration: 500, dashGap: 20}, function() {
+		$('#neural .neural0').attr('style', 'fill:#2F4666');
+		$('#neural .neural1').attr('style', 'fill:#F7921D');
+	});
+	var opti = new Vivus('opti', {type: 'async', duration: 500, dashGap: 20}, function() {
+		$('#opti .opti1').attr('style', 'fill:#2F4666');
+		$('#opti .opti0').attr('style', 'fill:#F7921D');
+	});
+	var time = new Vivus('time', {type: 'async', duration: 300, dashGap: 20}, function() {
+		$('#time .time1').attr('style', 'fill:#2F4666');
+		$('#time .time0').attr('style', 'fill:#F7921D');
+	});
+	var cost = new Vivus('cost', {type: 'async', duration: 200, dashGap: 20}, function() {
+		$('#cost .cost1').attr('style', 'fill:#2F4666');
+		$('#cost .cost0').attr('style', 'fill:#F7921D');
+	});
+
+
+
+
+
+
+
 
 
 	//Form

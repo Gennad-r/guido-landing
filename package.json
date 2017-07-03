@@ -26,6 +26,7 @@
     "hamburgers": "^0.8.1",
     "magnific-popup": "^1.1.0",
     "slick-carousel": "^1.6.0",
-    "vinyl-ftp": "^0.6.0"
+    "vinyl-ftp": "^0.6.0",
+    "vivus": "^0.4.1"
   }
 }
