@@ -101,6 +101,12 @@ $(function() {
 	});
 
 
+	// hamburger menu
+	$('.hamburger--elastic').click(function () {
+			$(this).toggleClass("is-active");
+			$(".navigation").toggleClass("clicked");
+	}
+		)
 
 
 
