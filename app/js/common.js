@@ -103,7 +103,7 @@ $(function() {
 
 	// hamburger menu
 	$('.navigation').addEventListener("click",function () {
-			$(.hamburger--elastic).toggleClass("is-active");
+			$(".hamburger--elastic").toggleClass("is-active");
 			$(".navigation").toggleClass("clicked");
 	});
 
