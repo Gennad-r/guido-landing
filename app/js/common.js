@@ -3,14 +3,18 @@ $(function() {
 	// Custom JS
 
 	//popup form
-	$("#btn-contacts").magnificPopup({
+	var btns = $('div.button');
+	console.log(btns);
+	console.log($("#btn-contacts, #btn-sl-1"));
+	$(btns).magnificPopup({
 		items: {
 			type: 'inline',
 			src: '#form-wraper'
 		},
+		removalDelay: 300,
 		closeBtnInside: true,
+		mainClass: 'mfp-fade'
 	});
-
 
 	//scroll to
 	$('.navigation a, .to-top').bind('click', function(e) {
@@ -81,12 +85,17 @@ $(function() {
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "http://parking.lotgroup.eu/mail.php", //Change
+			url: "mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			alert("Thank you!");
+			$("#form-wraper").css({"background-color": "#cdfdd2"});
+			$("#form-wraper legend").css({"background-color": "#247531"});
+			$("#form-wraper .right button").css({"background-color": "#247531"});
+			$("#form-wraper .right button").text("Thank you!");
+			//console.log("Thank you!");
 			setTimeout(function() {
 				// Done Functions
+				$.magnificPopup.close();
 				th.trigger("reset");
 			}, 1000);
 		});

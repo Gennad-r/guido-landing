@@ -5,6 +5,7 @@
 @import "../../node_modules/hamburgers/dist/hamburgers"
 @import "../../node_modules/magnific-popup/dist/magnific-popup"
 @import "slider"
+@import "magnific-popup"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -198,6 +199,10 @@ p
 	transform: translateY(-50%)
 
 /* slider ------------------------------------------------- */
+#challengesSlider
+	&:focus
+		outline: none
+
 .s-slide
 	position: relative
 	margin-bottom: 40px
@@ -316,6 +321,9 @@ p
 		border-color: transparent transparent transparent $orange
 
 
+.right
+	text-align: right
+	margin-top: 15px
 
 #form-wraper
 	background-color: #fff
@@ -340,9 +348,6 @@ p
 			margin-top: 7px
 	.field
 		margin-bottom: 5px
-	.right
-		text-align: right
-		margin-top: 15px
 		button
 			display: inline-block
 			border: none
@@ -369,6 +374,12 @@ p
 	right: 4px
 
 
-
+address
+	font-style: normal
+	a
+		color: #fff
+		&:hover
+			color: $orange
+			text-decoration: none
 
 @import "media" // Всегда в конце
