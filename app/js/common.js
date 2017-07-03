@@ -102,11 +102,10 @@ $(function() {
 
 
 	// hamburger menu
-	$('.navigation').click(function () {
+	$('.navigation').addEventListener("click",function () {
 			$(.hamburger--elastic).toggleClass("is-active");
 			$(".navigation").toggleClass("clicked");
-	}
-		)
+	});
 
 
 
