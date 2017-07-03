@@ -3,7 +3,7 @@ $(function() {
 	// Custom JS
 
 	//popup form
-	var btns = $('div.button');
+	var btns = $('.button');
 	$(btns).magnificPopup({
 		items: {
 			type: 'inline',
@@ -102,8 +102,8 @@ $(function() {
 
 
 	// hamburger menu
-	$('.navigation').addEventListener("click",function () {
-			$(".hamburger--elastic").toggleClass("is-active");
+	$('.hamburger--elastic').click(function () {
+			$(this).toggleClass("is-active");
 			$(".navigation").toggleClass("clicked");
 	});
 
