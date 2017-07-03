@@ -102,8 +102,8 @@ $(function() {
 
 
 	// hamburger menu
-	$('.hamburger--elastic').click(function () {
-			$(this).toggleClass("is-active");
+	$('.navigation').click(function () {
+			$(.hamburger--elastic).toggleClass("is-active");
 			$(".navigation").toggleClass("clicked");
 	}
 		)
