@@ -54,11 +54,11 @@ $(function() {
 				});
 
 		//fade-in scheme images
-		if ($("#cheme").position().top <= scrollDistance) {
-			$('.scheme-holder div').each(function (i) {
-				console.log($(".scheme-holder").position().top);
-				$(this).fadeIn((i+1)*300);
-		});
+		if ($("#sect3").position().top - window.innerHeight * 0.8 <= scrollDistance) {
+			setTimeout(function () {$(".st").addClass("fadeIn")}, 600);
+			setTimeout(function () {$(".nd").addClass("fadeIn")}, 1200);
+			setTimeout(function () {$(".rd").addClass("fadeIn")}, 1800);
+		
 		};
 	}).scroll();
 
