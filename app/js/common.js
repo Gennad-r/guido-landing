@@ -19,7 +19,7 @@ $(function() {
 	$('.navigation a, .to-top').bind('click', function(e) {
 				e.preventDefault(); // prevent hard jump, the default behavior
 
-				var target = $(this).attr("href"),// || $(this).attr("data"), // Set the target as variable
+				var target = $(this).attr("href") || $(this).attr("data"), // Set the target as variable
 					pos = $(target).offset().top - $('.navigation').height() + 1; // navigation panel heigth
 				// perform animated scrolling by getting top-position of target-element and set it as scroll target
 				$('html, body').stop().animate({
