@@ -1,7 +1,5 @@
 $(function() {
-
 	// Custom JS
-
 	//popup form
 	var btns = $('.button');
 	$(btns).magnificPopup({
@@ -109,35 +107,31 @@ $(function() {
 	});
 
 
+	//E-mail Ajax Send
 
-
-
-
-
-	//Form
-		//E-mail Ajax Send
 	$("#contact-us").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			$("#form-wraper").css({"background-color": "#cdfdd2"});
-			$("#form-wraper legend").css({"background-color": "#247531"});
-			$("#form-wraper .right button").css({"background-color": "#247531"});
-			$("#form-wraper .right button").text("Thank you!");
-			//console.log("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				$.magnificPopup.close();
-				th.trigger("reset");
-			}, 1000);
-		});
+			var th = $(this);
+			$.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+				$("input[name='customer-country']").attr('value', data.country_name);
+				$("input[name='customer-ip']").attr('value', data.ip);
+				$.ajax({
+					type: "POST",
+					url: "/mail.php", //Change
+					data: th.serialize()
+				}).done(function() {
+					$("#form-wraper").css({"background-color": "#cdfdd2"});
+					$("#form-wraper legend").css({"background-color": "#247531"});
+					$("#form-wraper .right button").css({"background-color": "#247531"});
+					$("#form-wraper .right button").text("Thank you!");
+					setTimeout(function() {
+						// Done Functions
+						$.magnificPopup.close();
+						th.trigger("reset");
+					}, 1000);
+				});
+			});
 		return false;
 	});
-
-
 });
 // Google Analitics
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
